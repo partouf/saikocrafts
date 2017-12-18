@@ -1,3 +1,4 @@
+local component = require("component")
 
 function toggledoor()
   local curval = component.redstone.getOutput(4)
