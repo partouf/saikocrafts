@@ -9,7 +9,7 @@ function Setup()
     modem.broadcast(77, "Hello, world!")
 end
 
-function OnReceiveMessage(receiverAddress, senderAddress, port, distance, payload)
+function OnReceiveMessage(eventName, receiverAddress, senderAddress, port, distance, payload)
     print("Received data '" .. tostring(payload) .. "' from address " .. remoteAddress .. " on network card " .. localNetworkCard .. " on port " .. port .. ".")
     if distance > 0 then
         print("Message was sent from " .. distance .. " blocks away.")
