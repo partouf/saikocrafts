@@ -4,16 +4,14 @@ local event = require("event")
 local shouldQuit = false
 
 -- address:string, relativeX:number, relativeY:number, relativeZ:number[, entityName:string]
-function OnMotion(address, relativeX, relativeY, relativeZ, entityName, extra)
+function OnMotion(eventName, address, relativeX, relativeY, relativeZ, entityName)
     print("Motion detected\n");
     print("It's " .. address .. " @ " .. relativeX .. " x " .. relativeY .. " x " .. relativeZ .. " (" .. entityName .. ")\n")
-    print("Extra " .. extra .. "\n")
 end
 
 -- key_up(keyboardAddress: string, char: number, code: number, playerName: string)
-function OnKeyUp(keyboardAddress, char, code, playerName)
-    print("key_up " .. keyboardAddress .. ": " .. char .. " / " .. code .. " (" .. playerName .. ")\n");
-    if char == 'c' then
+function OnKeyUp(eventName, keyboardAddress, char, code, playerName)
+    if code == 46 then
         shouldQuit = true
     end
 end
