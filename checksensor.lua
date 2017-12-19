@@ -20,7 +20,7 @@ end
 
 function Setup()
     event.listen("motion", OnMotion)
-    event.listen()
+    event.listen("key_up", OnKeyUp)
 end
 
 function MainLoop()
