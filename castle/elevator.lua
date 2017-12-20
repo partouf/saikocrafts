@@ -14,7 +14,8 @@ function OnReceiveMessage(eventName, receiverAddress, senderAddress, port, dista
 end
 
 function MainLoop()
-    print("Hello, World!")
+    print("Hello, World!\n")
+    print("Modem address is: " .. modem.address .. "\n")
     while not shouldQuit do
         os.sleep(5)
     end
