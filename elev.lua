@@ -1,19 +1,18 @@
 local shell = require("shell")
 local component = require("component")
 local modem = component.modem
-
-local elevatorAddress = "ccdd7295-2905-4a41-846b01f622b339d4f"
+local event = require("event")
 
 function GoKitchen()
-    modem.send(elevatorAddress, 33, "kitchen")
+    modem.broadcast(33, "elevator->kitchen")
 end
 
 function GoGroundfloor()
-    modem.send(elevatorAddress, 33, "groundfloor")
+    modem.broadcast(33, "elevator->groundfloor")
 end
 
 function GoDiningroom()
-    modem.send(elevatorAddress, 33, "diningroom")
+    modem.broadcast(33, "elevator->diningroom")
 end
 
 

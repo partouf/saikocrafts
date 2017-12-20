@@ -16,17 +16,25 @@ function ResetAllOutput()
     end
 end
 
+function SendInfo(address)
+    modem.send(address, 77, "elevator=" .. modem.address)
+end
+
 function OnReceiveMessage(eventName, receiverAddress, senderAddress, port, distance, payload)
     print("Someone sent a message to us: " .. payload .. "\n")
 
-    ResetAllOutput()
+    if payload == "info" then
+        SendInfo(senderAddress)
+    else
+        ResetAllOutput()
 
-    if payload == "kitchen" then
-        rs.setOutput(0, 255)
-    elseif payload == "groundfloor" then
-        rs.setOutput(1, 255)
-    elseif payload == "diningroom" then
-        rs.setOutput(2, 255)
+        if payload == "elevator->kitchen" then
+            rs.setOutput(0, 255)
+        elseif payload == "elevator->groundfloor" then
+            rs.setOutput(1, 255)
+        elseif payload == "elevator->diningroom" then
+            rs.setOutput(2, 255)
+        end
     end
 end
 
