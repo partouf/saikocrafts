@@ -1,12 +1,18 @@
 local component = require("component")
 local event = require("event")
+local modem = component.modem
 
 local shouldQuit = false
 
 -- address:string, relativeX:number, relativeY:number, relativeZ:number[, entityName:string]
 function OnMotion(eventName, address, relativeX, relativeY, relativeZ, entityName)
-    print("Motion detected\n");
-    print("It's " .. address .. " @ " .. relativeX .. " x " .. relativeY .. " x " .. relativeZ .. " (" .. entityName .. ")\n")
+    print(entityName .. " is at the service entry\n")
+
+    GoGroundfloor()
+end
+
+function GoGroundfloor()
+    modem.broadcast(33, "elevator->groundfloor")
 end
 
 -- key_up(keyboardAddress: string, char: number, code: number, playerName: string)
