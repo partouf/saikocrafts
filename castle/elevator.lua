@@ -19,7 +19,7 @@ end
 function OnReceiveMessage(eventName, receiverAddress, senderAddress, port, distance, payload)
     ResetAllOutput()
 
-    print("Someone sent a message to us: " .. payload)
+    print("Someone sent a message to us: " .. payload .. "\n")
 
     if payload == "kitchen" then
         rs.setOutput(0, 255)
@@ -31,6 +31,8 @@ function OnReceiveMessage(eventName, receiverAddress, senderAddress, port, dista
 end
 
 function MainLoop()
+    print("Elevator program online\n\n")
+
     while not shouldQuit do
         os.sleep(5)
     end

@@ -19,12 +19,12 @@ end
 
 local args, options = shell.parse(...)
 
-if args[1] == "-1" then
+if args[1] == "kitchen" then
     GoKitchen()
-elseif args[1] == "0" then
+elseif args[1] == "groundfloor" then
     GoGroundfloor()
-elseif args[1] == "1" then
+elseif args[1] == "diningroom" then
     GoDiningroom()
 else
-    print("Usage: elev <floor number>")
+    print("Usage: elev kitchen/groundfloor/diningroom")
 end
