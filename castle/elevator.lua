@@ -31,9 +31,9 @@ function OnReceiveMessage(eventName, receiverAddress, senderAddress, port, dista
         if payload == "elevator->kitchen" then
             rs.setOutput(0, 255)
         elseif payload == "elevator->groundfloor" then
-            rs.setOutput(1, 255)
+            rs.setOutput(3, 255)
         elseif payload == "elevator->diningroom" then
-            rs.setOutput(2, 255)
+            rs.setOutput(4, 255)
         end
     end
 end
