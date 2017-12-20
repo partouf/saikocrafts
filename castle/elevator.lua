@@ -17,9 +17,9 @@ function ResetAllOutput()
 end
 
 function OnReceiveMessage(eventName, receiverAddress, senderAddress, port, distance, payload)
-    ResetAllOutput()
-
     print("Someone sent a message to us: " .. payload .. "\n")
+
+    ResetAllOutput()
 
     if payload == "kitchen" then
         rs.setOutput(0, 255)
