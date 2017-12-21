@@ -4,6 +4,7 @@ local event = require("event")
 local modem = component.modem
 
 local shouldQuit = false
+local frontdoorChannel = 1
 
 function Setup()
     event.listen("modem_message", OnReceiveMessage)
@@ -12,7 +13,9 @@ end
 
 function ResetAllOutput()
     for side = 0,5,1 do
-        rs.setOutput(side, 0)
+        if not (side == frontdoorChannel) then
+            rs.setOutput(side, 0)
+        end
     end
 end
 
@@ -34,6 +37,17 @@ function OnReceiveMessage(eventName, receiverAddress, senderAddress, port, dista
             rs.setOutput(3, 255)
         elseif payload == "elevator->diningroom" then
             rs.setOutput(4, 255)
+        elseif payload == "castle->togglefrontdoor" then
+            local currentState = rs.getOutput(frontdoorChannel)
+            if (currentState == 0) then
+                rs.setOutput(frontdoorChannel, 255)
+            else
+                rs.setOutput(frontdoorChannel, 0)
+            end
+        elseif payload == "castle->openfrontdoor" then
+            rs.setOutput(frontdoorChannel, 255)
+        elseif payload == "castle->closefrontdoor" then
+            rs.setOutput(frontdoorChannel, 0)
         end
     end
 end
