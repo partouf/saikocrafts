@@ -15,6 +15,10 @@ function GoDiningroom()
     modem.broadcast(33, "elevator->diningroom")
 end
 
+function ToggleFrontDoor()
+    modem.broadcast(33, "castle->togglefrontdoor")
+end
+
 
 local args, options = shell.parse(...)
 
@@ -24,6 +28,8 @@ elseif args[1] == "groundfloor" then
     GoGroundfloor()
 elseif args[1] == "diningroom" then
     GoDiningroom()
+elseif args[1] == "frontdoor" then
+    ToggleFrontDoor()
 else
-    print("Usage: elev kitchen/groundfloor/diningroom")
+    print("Usage: elev kitchen/groundfloor/diningroom/frontdoor")
 end
