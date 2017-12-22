@@ -37,6 +37,8 @@ function OnReceiveMessage(eventName, receiverAddress, senderAddress, port, dista
             rs.setOutput(3, 255)
         elseif payload == "elevator->diningroom" then
             rs.setOutput(4, 255)
+        elseif payload == "elevator->undergrond" then
+            rs.setOutput(2, 255)
         elseif payload == "castle->togglefrontdoor" then
             local currentState = rs.getOutput(frontdoorChannel)
             if (currentState == 0) then
