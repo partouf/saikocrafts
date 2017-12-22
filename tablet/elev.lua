@@ -37,5 +37,5 @@ elseif args[1] == "frontdoor" then
 elseif args[1] == "underground" then
     GoUnderground()
 else
-    print("Usage: elev kitchen/groundfloor/diningroom/frontdoor")
+    print("Usage: elev kitchen/groundfloor/diningroom/frontdoor/underground")
 end
