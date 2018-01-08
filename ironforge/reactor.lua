@@ -1,6 +1,5 @@
 local component = require("component")
 local event = require("event")
-local modem = component.modem
 local redstone = component.redstone
 local reactor = component.br_reactor
 
@@ -12,8 +11,12 @@ function OnKeyUp(eventName, keyboardAddress, char, code, playerName)
     shouldQuit = true
 end
 
+function GetCapacitySignal()
+    return redstone.getInput(1)
+end
+
 function IsCapacityLow()
-    return redstone.getInput(1) > 0
+    return GetCapacitySignal() > 0
 end
 
 function IsReactorOn()
@@ -21,10 +24,18 @@ function IsReactorOn()
 end
 
 function EnableReactor()
+    local capsig = GetCapacitySignal()
+    print("Current signal from energy monitor: ", capsig)
+
+    print("Activating Reactory")
     reactor.setActive(true)
 end
 
 function DisableReactor()
+    local capsig = GetCapacitySignal()
+    print("Current signal from energy monitor: ", capsig)
+
+    print("Deactivating Reactory")
     reactor.setActive(false)
 end
 
@@ -33,7 +44,7 @@ function Setup()
 end
 
 function MainLoop()
-    print("Listening\n")
+    print("Listening")
 
     while not shouldQuit do
         if IsCapacityLow() then
