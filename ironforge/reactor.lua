@@ -12,7 +12,7 @@ function OnKeyUp(eventName, keyboardAddress, char, code, playerName)
 end
 
 function GetCapacitySignal()
-    return redstone.getInput(1)
+    return redstone.getInput(3)
 end
 
 function IsCapacityLow()
@@ -29,7 +29,6 @@ function EnableReactor()
 
     print("Activating Reactory")
     reactor.setActive(true)
-    redstone.setOutput(4, 255)
 end
 
 function DisableReactor()
@@ -38,7 +37,6 @@ function DisableReactor()
 
     print("Deactivating Reactory")
     reactor.setActive(false)
-    redstone.setOutput(4, 0)
 end
 
 function Setup()
