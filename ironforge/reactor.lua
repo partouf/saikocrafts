@@ -8,7 +8,7 @@ local shouldQuit = false
 
 -- key_up(keyboardAddress: string, char: number, code: number, playerName: string)
 function OnKeyUp(eventName, keyboardAddress, char, code, playerName)
-    shouldQuit = true
+
 end
 
 function GetCapacitySignal()
