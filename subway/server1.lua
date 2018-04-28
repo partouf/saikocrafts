@@ -1,5 +1,6 @@
 local component = require("component")
 local event = require("event")
+local term = require("term")
 local redstone = component.redstone
 
 local shouldQuit = false
