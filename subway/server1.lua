@@ -14,7 +14,7 @@ local timerSandyPlazaStoplight = -1
 local timerHomeStationStoplight = -1
 
 function rsChanged(eventname, address, side, oldValue, newValue, color)
-    print("rsChanged Event! (" .. address .. "," .. side .. "," .. oldValue .. "," .. newValue .. "," .. color .. ")")
+    print("rsChanged Event!")
     if (side == inputSandyPlazaCart) and (newValue > 0) then
         AlertSandyPlazaCart()
     elseif (side == inputHomeStationCart) and (newValue > 0) then
@@ -78,6 +78,12 @@ end
 
 function MainLoop()
     print("Listening")
+
+    if GetHomeStationCartActivity() then
+        AlertSandyPlazaCart()
+    elseif GetSandyPlazaCartActivity() then
+        AlertHomeStationCart()
+    end
 
     while not shouldQuit do
         os.sleep(5)
