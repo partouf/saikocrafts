@@ -45,7 +45,7 @@ end
 function TurnOnHomeStationStopLight()
     print("TurnOnHomeStationStopLight")
     redstone.setOutput(outputHomeStationStoplight, 255)
-    event.timer(30, TurnOffHomeStationStopLight)
+    event.timer(40, TurnOffHomeStationStopLight)
 end
 
 function TurnOffHomeStationStopLight()
@@ -57,7 +57,7 @@ end
 function TurnOnSandyPlazaStopLight()
     print("TurnOnSandyPlazaStopLight")
     redstone.setOutput(outputSandyPlazaStoplight, 255)
-    event.timer(30, TurnOffSandyPlazaStopLight)
+    event.timer(40, TurnOffSandyPlazaStopLight)
 end
 
 function TurnOffSandyPlazaStopLight()
