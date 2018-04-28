@@ -71,7 +71,7 @@ function MainLoop()
     print("Listening")
 
     while not shouldQuit do
-        handleEvent(event.pull())
+        os.sleep(5)
     end
 
     print("Quit")
