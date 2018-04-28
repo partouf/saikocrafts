@@ -13,8 +13,8 @@ local outputHomeStationStoplight = 5
 local timerSandyPlazaStoplight = -1
 local timerHomeStationStoplight = -1
 
-function rsChanged(address, side, oldValue, newValue, color)
-    print("rsChanged Event!")
+function rsChanged(eventname, address, side, oldValue, newValue, color)
+    print("rsChanged Event! (" .. address .. "," .. side .. "," .. oldValue .. "," .. newValue .. "," .. color .. ")")
     if (side == inputSandyPlazaCart) and (newValue > 0) then
         AlertSandyPlazaCart()
     elseif (side == inputHomeStationCart) and (newValue > 0) then
