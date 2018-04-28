@@ -69,8 +69,6 @@ end
 
 function Setup()
     term.clear()
-    term.setCursorPos(1,1)
-    term.setCursorBlink(true)
 
     print("Setup")
     if event.listen("redstone_changed", rsChanged) == false then
