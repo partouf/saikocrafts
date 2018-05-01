@@ -9,7 +9,7 @@ function rsChanged(eventname, address, side, oldValue, newValue, color)
     print("rsChanged Event!")
     if (side == 1) and (newValue > 0) then
         TurnReactorOff()
-    else if (side == 1) and (newValue == 0) then
+    elseif (side == 1) and (newValue == 0) then
         TurnReactorOn()
     end
 end
