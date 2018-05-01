@@ -26,12 +26,12 @@ end
 
 function TurnReactorOn()
     print("Turning the reactor ON")
-    return redstone.setInput(4, 15)
+    return redstone.setOutput(4, 15)
 end
 
 function TurnReactorOff()
     print("Turning the reactor OFF")
-    return redstone.setInput(4, 0)
+    return redstone.setOutput(4, 0)
 end
 
 function Setup()
