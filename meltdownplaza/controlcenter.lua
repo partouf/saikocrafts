@@ -134,12 +134,16 @@ function ShowMenu()
 end
 
 function Setup()
-
+    redstone.setOutput(sideElectromagnets, 0)
+    redstone.setOutput(sideFusionOutput, 0)
+    redstone.setOutput(sideFusionKickstart, 0)
+    redstone.setOutput(sideFusionFeedback, 0)
+    redstone.setOutput(sideHome, 0)
 end
 
 function MainLoop()
     while not shouldQuit do
-        ShowMenu()        
+        ShowMenu()
 
         handleEvent(event.pull())
     end
