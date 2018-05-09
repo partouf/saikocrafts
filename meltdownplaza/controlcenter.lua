@@ -121,7 +121,7 @@ function ShowMenu()
     if isOnFusionFeedback then
         print("<4>- Disable Fusion feedbackloop")
     else
-        print(" 4 - Enable Fusion feeddbackloop")
+        print(" 4 - Enable Fusion feedbackloop")
     end
     
     if isOnHome then
