@@ -1,6 +1,7 @@
 local component = require("component")
 local event = require("event")
 local redstone = component.redstone
+local term = require("term")
 
 local shouldQuit = false
 
@@ -122,7 +123,7 @@ function ShowMenu()
 end
 
 function Setup()
-    
+
 end
 
 function MainLoop()
