@@ -125,9 +125,9 @@ function ShowMenu()
     end
     
     if isOnHome then
-        print("<5>- Cut power to Homebase")
+        print("<5>- Cut main power output")
     else
-        print(" 5 - Power Homebase")
+        print(" 5 - Enable main power output")
     end
 
     print("")
