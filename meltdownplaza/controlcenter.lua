@@ -47,40 +47,50 @@ end
 function ToggleElectromagnets()
     if isOnElectromagnets then
         redstone.setOutput(sideElectromagnets, 0)
+        isOnElectromagnets = false
     else
         redstone.setOutput(sideElectromagnets, 255)
+        isOnElectromagnets = true
     end
 end
 
 function ToggleFusionOutput()
     if isOnFusionOutput then
         redstone.setOutput(sideFusionOutput, 0)
+        isOnFusionOutput = false
     else
         redstone.setOutput(sideFusionOutput, 255)
+        isOnFusionOutput = true
     end
 end
 
 function ToggleFusionKickstart()
     if isOnFusionKickstart then
         redstone.setOutput(sideFusionKickstart, 0)
+        isOnFusionKickstart = false
     else
         redstone.setOutput(sideFusionKickstart, 255)
+        isOnFusionKickstart = true
     end
 end
 
 function ToggleFusionFeedback()
     if isOnFusionFeedback then
         redstone.setOutput(sideFusionFeedback, 0)
+        isOnFusionFeedback = false
     else
         redstone.setOutput(sideFusionFeedback, 255)
+        isOnFusionFeedback = true
     end
 end
 
 function ToggleHome()
     if isOnHome then
         redstone.setOutput(sideHome, 0)
+        isOnHome = false
     else
         redstone.setOutput(sideHome, 255)
+        isOnHome = true
     end
 end
 
