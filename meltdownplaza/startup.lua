@@ -6,14 +6,14 @@ function DownloadFile(url, path)
 end
 
 function Update()
-    local url = "https://raw.githubusercontent.com/partouf/saikocrafts/master/meltdownplaza/reactor.lua"
-    DownloadFile(url, "/usr/meltdownplaza/reactor.lua")
+    local url = "https://raw.githubusercontent.com/partouf/saikocrafts/master/meltdownplaza/controlcenter.lua"
+    DownloadFile(url, "/usr/meltdownplaza/controlcenter.lua")
 end
 
 function OnStartup()
     Update()
 
-    dofile("/usr/meltdownplaza/reactor.lua")
+    dofile("/usr/meltdownplaza/controlcenter.lua")
 end
 
 OnStartup()
