@@ -24,6 +24,7 @@ end
 local myEventHandlers = setmetatable({}, { __index = function() return unknownEvent end })
  
 function myEventHandlers.key_up(adress, char, code, playerName)
+    print("Pressed:"..char)
     if (char == string.byte("1")) then
         ToggleElectromagnets()
     elseif (char == string.byte("2")) then
